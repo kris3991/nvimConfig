@@ -1,4 +1,6 @@
-return {
+do return {
+-- lazy.nvim
+{
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
@@ -13,6 +15,8 @@ return {
     "rcarriga/nvim-notify",
     }
 }
+
+} end
 
 
 require("noice").setup({
