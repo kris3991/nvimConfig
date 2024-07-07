@@ -13,5 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("lazy").setup("plugins")
-require("configs")
+require("themes")
+--require("vim-options")
 --vim.api.nvim_command("set nu")

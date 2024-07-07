@@ -55,3 +55,9 @@ require("nvim-tree").setup({
   end
   },
 }
+
+--useful shortcuts
+--a creates file
+--r rename file
+--d delete file
+

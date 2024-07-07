@@ -15,5 +15,8 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-W>j', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-W>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>l', { noremap = true, silent = true })
 
+--vim.opts.rocks.hererocks = false
 
-
+--vim.o.background = "dark"
+--vim.cmd.colorscheme "catppuccin-latte"
+--vim.cmd.colorscheme "gruvbox"

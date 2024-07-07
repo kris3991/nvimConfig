@@ -1,13 +1,10 @@
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
-		{"rcarriga/nvim-dap-ui",
-		dependencies = {"nvim-neotest/nvim-nio"}
-		},
+		{ "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
 	},
 	config = function()
-    require("dapui").setup()
-		
+		require("dapui").setup()
 
 		local dap, dapui = require("dap"), require("dapui")
 
@@ -24,9 +21,37 @@ return {
 			dapui.close()
 		end
 
-		vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
-		vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>")
-		vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
-		vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
+		vim.keymap.set("n", "<F5>", function()
+			require("dap").continue()
+		end)
+		vim.keymap.set("n", "<F10>", function()
+			require("dap").step_over()
+		end)
+		vim.keymap.set("n", "<F11>", function()
+			require("dap").step_into()
+		end)
+		vim.keymap.set("n", "<F12>", function()
+			require("dap").step_out()
+		end)
+		vim.keymap.set("n", "<Leader>b", function()
+			require("dap").toggle_breakpoint()
+		end)
+		vim.keymap.set("n", "<Leader>B", function()
+			require("dap").set_breakpoint()
+		end)
+		vim.keymap.set("n", "<Leader>lp", function()
+			require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+		end)
+		vim.keymap.set("n", "<Leader>dr", function()
+			require("dap").repl.open()
+		end)
+		vim.keymap.set("n", "<Leader>dl", function()
+			require("dap").run_last()
+		end)
+
+		--		vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
+		--		vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>")
+		--		vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
+		--		vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
 	end,
 }

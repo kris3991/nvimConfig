@@ -1,8 +1,5 @@
 {
     "diagnostics.globals": [
-        "vim",
-        "format",
-        "on_attach",
-        "guifont"
+        "vim"
     ]
 }
