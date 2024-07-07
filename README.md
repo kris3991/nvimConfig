@@ -1,2 +1,2 @@
 # nvimConfig
-my nvim config
+#linux test.
